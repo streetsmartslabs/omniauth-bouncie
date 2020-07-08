@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'lib/omniauth/bouncie/version'
+require_relative 'lib/omniauth-bouncie/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'omniauth-bouncie'
