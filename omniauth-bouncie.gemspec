@@ -4,7 +4,7 @@ require_relative 'lib/omniauth-bouncie/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'omniauth-bouncie'
-  spec.version       = Omniauth::Bouncie::VERSION
+  spec.version       = OmniAuth::Bouncie::VERSION
   spec.authors       = ['Corey Psoinos']
   spec.email         = ['corey@streetsmarts.io']
 
