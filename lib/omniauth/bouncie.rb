@@ -1,4 +1,6 @@
-require "omniauth/bouncie/version"
+# frozen_string_literal: true
+
+require 'omniauth/bouncie/version'
 
 module Omniauth
   module Bouncie
