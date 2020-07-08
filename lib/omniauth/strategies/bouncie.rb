@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'omniauth-oauth2'
 
 module OmniAuth
@@ -8,10 +10,9 @@ module OmniAuth
 
       # This is where you pass the options you would pass when
       # initializing your consumer from the OAuth gem.
-      option :client_options, { site:          'https://auth.bouncie.com',
+      option :client_options, { site: 'https://auth.bouncie.com',
                                 authorize_url: 'dialog/authorize',
-                                token_url:     'oauth/token'
-                              }
+                                token_url: 'oauth/token' }
 
       # These are called after authentication has succeeded. If
       # possible, you should try to set the UID without making
@@ -22,19 +23,19 @@ module OmniAuth
 
       info do
         {
-          name:  raw_info['name'],
+          name: raw_info['name'],
           email: raw_info['email']
         }
       end
 
       extra do
         {
-          'raw_info' => raw_info
+          raw_info: raw_info
         }
       end
 
       def raw_info
-        @raw_info ||= access_token.get('https://api.bouncie.dev/v1/user').parsed
+        @raw_info ||= JSON.parse(Faraday.get('https://api.bouncie.dev/v1/user', {}, { Authorization: access_token.token }).body)
       end
     end
   end
