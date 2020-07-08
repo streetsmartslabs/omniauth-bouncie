@@ -1,4 +1,4 @@
-# Omniauth::Bouncie
+# OmniAuth::Bouncie
 
 This is the unofficial OmniAuth strategy for authenticating to Bouncie. Register your app and see official documentation at [https://docs.bouncie.dev](https://docs.bouncie.dev).
 
