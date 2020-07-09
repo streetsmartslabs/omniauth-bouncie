@@ -30,7 +30,8 @@ module OmniAuth
 
       extra do
         {
-          raw_info: raw_info
+          raw_info: raw_info,
+          authorization_code: request.params['code']
         }
       end
 
